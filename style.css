@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #06181f;
+}
+
+.container {
+    position: relative;
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .icon {
+    width: 600px;
+    margin-left: 90px;
+}
+
+.container .icon:hover {
+    cursor: pointer;
+}
+
+.container .icon path {
+    fill: transparent;
+    stroke-width: 4;
+    stroke: #31e8ff;
+}
+
+.container .icon.broken-heart path {
+    stroke-dasharray: 1050;
+    stroke-dashoffset: 0;
+}
+
+.container .icon.broken-heart:hover path {
+    animation: animate-broken-heart 3s linear forwards
+}
+
+@keyframes animate-broken-heart {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    40% {
+        stroke-dashoffset: 1060;
+    }
+    80% {
+        stroke-dashoffset: 2120;
+        fill: transparent
+    }
+    100% {
+        stroke-dashoffset: 2120;
+        fill: #31e8ff;
+    }
+}
